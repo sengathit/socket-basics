@@ -5,6 +5,9 @@ socket.on('connect',function(){
 
 socket.on('message',function(message){
 	console.log(message.text);
+	var messages$ = jQuery('.messages');
+
+	messages$.prepend('<p>' + message.text + '</p>');
 });
 
 // Handles submitting of new message
